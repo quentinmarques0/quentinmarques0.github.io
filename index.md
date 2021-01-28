@@ -3,9 +3,9 @@
 > Click to the button to join the game
 > <a href="join.html">Join !</a>
 
-<input id="playerName" type="text" placeholder="Entrez votre nom !"></input>
-<button onclick="addPlayer();">Add Player</button>
-<button onclick="launchGame();">Launch Game</button>
+<input id="playerName" type="text" placeholder="Entrez votre nom !">
+<button class="btn btn-github" onclick="addPlayer();">Add Player</button>
+<button class="btn btn-github" onclick="launchGame();">Launch Game</button>
 
 <script>
 
