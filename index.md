@@ -62,7 +62,7 @@
     }
     console.log("----------------");
     for (var i = 0; i < impIndex.length; i++) {
-      console.log(players[impIndex[i]]);
+      console.log(players[impIndex[i]] + " " + impIndex[i]);
     }
     console.log("----------------");
 
@@ -95,7 +95,8 @@
     var impostorList = "";
 
     for (var i = 0; i < impIndex.length; i++) {
-      impostorList += " "+players[i]+" ";
+      impostorList += " "+players[impIndex[i]]+" ";
+      console.log("("+impIndex[i]+" == "+index+")");
       if(impIndex[i] == index)
       {
         team = "Impostor";
@@ -132,5 +133,5 @@
 }
 
 
-  console.log("Hello World 10");
+  console.log("Hello World");
 </script>
