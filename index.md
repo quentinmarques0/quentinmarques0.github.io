@@ -104,7 +104,7 @@
     if(players.length > index)
     {
       var code = "<p>"+playerName + " - "+ team+"</p>";
-      code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ (index+1) +", "+ impIndex) +");\">Continue</button>";
+      code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ (index+1) +", "+ impIndex +");\">Continue</button>";
 
 
 
