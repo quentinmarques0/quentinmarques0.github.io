@@ -52,6 +52,7 @@
     var max = players.length / count;
     while(index < count){
 
+
       impIndex[impIndex.length] = getRandomInt(min, max);
 
 
@@ -59,10 +60,16 @@
       max = (max * (index+1)) - 1;
       index++;
     }
+    console.log("----------------");
+    for (var i = 0; i < impIndex.length; i++) {
+      console.log(players[impIndex[i]]);
+    }
+    console.log("----------------");
 
 
 
-    nextCrewmate(index, impIndex);
+
+    nextCrewmate(0, impIndex);
   }
 
   function nextCrewmate(index, impIndex)
@@ -125,5 +132,5 @@
 }
 
 
-  console.log("Hello World 8");
+  console.log("Hello World 10");
 </script>
