@@ -3,6 +3,18 @@
 > Click to the button to join the game
 > <a href="join.html">Join !</a>
 
+<select id="impostor" name="impostor">
+  <option default value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+
 <input id="playerName" type="text" placeholder="Entrez votre nom !">
 <button class="btn btn-github" onclick="addPlayer();">Add Player</button>
 <button class="btn btn-github" onclick="launchGame();">Launch Game</button>
@@ -17,6 +29,7 @@
     players[players.length] = name;
   }
 
+  //Lancer le jeu
   function launchGame()
   {
 
@@ -24,8 +37,94 @@
       console.log(players[i]);
     }
 
+    var impostors = getImpostors();
+
 
   }
+
+  function getImpostors()
+  {
+    //getRandomInt
+    var count = getImpCount();
+
+    var impIndex = [];
+
+    var index = 0;
+    var min = 0;
+    var max = players.length / count;
+    while(index < count){
+
+      impIndex[impIndex.length] = getRandomInt(min, max);
+
+
+      min = max + 1;
+      max = (max * (index+1)) - 1;
+      index++;
+    }
+
+
+
+    nextCrewmate(index, impIndex);
+  }
+
+  function nextCrewmate(index, impIndex)
+  {
+
+    var playerName = players[index];
+
+    var code = "<p>"+playerName +"</p>";
+    code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+", "+ impIndex) +");\">Continue</button>";
+
+
+
+    document.getElementByTagName("body").innerHTML = code;
+
+
+  }
+
+  function showTeam(index, impIndex)
+  {
+    var playerName = players[index];
+    var team = "Crewmate";
+
+    var impostorList = "";
+
+    for (var i = 0; i < impIndex.length; i++) {
+      impostorList += " "+players[i]+" ";
+      if(impIndex[i] == index)
+      {
+        team = "Impostor";
+      }
+    }
+
+    if(team == "Impostor")
+    {
+      team += "("+impostorList+")";
+    }
+
+
+    if(players.length > index)
+    {
+      var code = "<p>"+playerName + " - "+ team+"</p>";
+      code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ (index+1) +", "+ impIndex) +");\">Continue</button>";
+
+
+
+      document.getElementByTagName("body").innerHTML = code;
+
+    }
+  }
+
+  function getImpCount()
+  {
+    return parseInt(document.getElementById("impostor").value);
+  }
+
+  function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 
   console.log("Hello World");
