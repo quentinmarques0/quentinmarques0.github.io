@@ -38,8 +38,6 @@
     }
 
     var impostors = getImpostors();
-
-
   }
 
   function getImpostors()
@@ -73,7 +71,7 @@
     var playerName = players[index];
 
     var code = "<p>"+playerName +"</p>";
-    code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+", "+ impIndex) +");\">Continue</button>";
+    code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+", "+ impIndex +");\">Continue</button>";
 
 
 
