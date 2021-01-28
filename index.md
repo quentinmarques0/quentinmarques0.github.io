@@ -75,7 +75,7 @@
 
 
 
-    document.getElementByTagName("body").innerHTML = code;
+    document.getElementsByTagName("body")[0].innerHTML = code;
 
 
   }
@@ -108,7 +108,7 @@
 
 
 
-      document.getElementByTagName("body").innerHTML = code;
+      document.getElementsByTagName("body")[0].innerHTML = code;
 
     }
   }
@@ -125,5 +125,5 @@
 }
 
 
-  console.log("Hello World");
+  console.log("Hello World 2");
 </script>
