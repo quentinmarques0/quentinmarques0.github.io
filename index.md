@@ -70,10 +70,10 @@
 
 
 
-    nextCrewmate(0, impIndex);
+    nextCrewmate(0);
   }
 
-  function nextCrewmate(index, impIndex)
+  function nextCrewmate(index)
   {
 
     var playerName = players[index];
@@ -88,7 +88,7 @@
 
   }
 
-  function showTeam(index, impIndex)
+  function showTeam(index)
   {
     var playerName = players[index];
     var team = "Crewmate";
@@ -134,5 +134,5 @@
 }
 
 
-  console.log("Hello World 2021");
+  console.log("Hello World 2000");
 </script>
