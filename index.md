@@ -22,6 +22,8 @@
 <script>
 
   players = [];
+  impIndex = [];
+
 
   function addPlayer()
   {
@@ -45,7 +47,6 @@
     //getRandomInt
     var count = getImpCount();
 
-    var impIndex = [];
 
     var index = 0;
     var min = 0;
@@ -78,7 +79,7 @@
     var playerName = players[index];
 
     var code = "<p>"+playerName +"</p>";
-    code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+", "+ impIndex +");\">Continue</button>";
+    code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+");\">Continue</button>";
 
 
 
@@ -112,7 +113,7 @@
     if(players.length > index)
     {
       var code = "<p>"+playerName + " - "+ team+"</p>";
-      code += "<button class=\"btn btn-github\" onclick=\"nextCrewmate("+ (index+1) +", "+ impIndex +");\">Continue</button>";
+      code += "<button class=\"btn btn-github\" onclick=\"nextCrewmate("+ (index+1) +");\">Continue</button>";
 
 
 
