@@ -137,6 +137,11 @@
 
     var playerName = players[index];
 
+    if(playerName == null)
+    {
+    playerName = "Bonne partie !";
+    }
+
     var code = "<p>"+playerName +"</p>";
     code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+");\">Continue</button>";
 
@@ -161,6 +166,11 @@
       {
         team = "Impostor";
       }
+    }
+
+    if(index == sherifIndex)
+    {
+      team = "Sherif";
     }
 
     if(team == "Impostor")
@@ -193,5 +203,5 @@
 }
 
 
-  console.log("Hello World 2000");
+  console.log("Sherif Update 1");
 </script>
