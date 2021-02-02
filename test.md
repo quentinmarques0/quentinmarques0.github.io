@@ -82,7 +82,7 @@
     
     console.log("------ Sherif ------");
     //for (var i = 0; i < impIndex.length; i++) {
-    if(sherifIndex > 0){
+    if(count > 0){
       console.log(players[sherifIndex] + " " + sherifIndex);
     }
     //}
@@ -203,5 +203,5 @@
 }
 
 
-  console.log("Sherif Update 1");
+  console.log("Sherif Update 2");
 </script>
