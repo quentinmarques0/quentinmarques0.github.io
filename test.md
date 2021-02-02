@@ -119,11 +119,11 @@
     }
     console.log("-----------------------");
 
-    console.log("------ Sherif ------");
+    //console.log("------ Sherif ------");
     //for (var i = 0; i < impIndex.length; i++) {
-      console.log(players[sherifIndex] + " " + sherifIndex);
+      //console.log(players[sherifIndex] + " " + sherifIndex);
     //}
-    console.log("-----------------------");
+    //console.log("-----------------------");
 
 
 
