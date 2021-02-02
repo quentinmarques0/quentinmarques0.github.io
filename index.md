@@ -76,12 +76,14 @@
     
     if(count > 0)
     {
-      sherifIndex = crewmateList[getRandomInt(0, crewmateList-1)];
+      sherifIndex = crewmateList[getRandomInt(0, crewmateList.length-1)];
     }
     
     console.log("------ Sherif ------");
     //for (var i = 0; i < impIndex.length; i++) {
+    if(sherifIndex > 0){
       console.log(players[sherifIndex] + " " + sherifIndex);
+    }
     //}
     console.log("-----------------------");
 
