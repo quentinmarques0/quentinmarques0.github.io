@@ -27,6 +27,7 @@
 <script>
 
   players = [];
+  impostors = [];
   impIndex = [];
   sherifIndex = -1;
 
@@ -46,9 +47,54 @@
       console.log(players[i]);
     }
 
-    var impostors = getImpostors();
+    impostors = getImpostors();
+    //var sherif = getSherif();
   }
 
+  function getSherif()
+  {
+    //getRandomInt
+    var count = parseInt(document.getElementById("sherif").value);
+
+    var crewmateList = [];
+    for(var i = 0; i < players.length; i++)
+    {
+      var isImpostor = false;
+      for(var j = 0; j < impIndex.length; j++)
+      {
+        console.log("Sherif Test "+ i + " == "+ impIndex[j]);
+        if(i == impIndex[j])
+        {
+          isImpostor = true;
+        }
+      }
+      if(!isImpostor)
+      {
+        crewmateList[crewmateList.length] = i;
+      }
+    }
+
+    
+    
+    if(count > 0)
+    {
+      sherifIndex = crewmateList[getRandomInt(0, crewmateList.length-1)];
+    }
+    
+    console.log("------ Sherif ------");
+    //for (var i = 0; i < impIndex.length; i++) {
+    if(count > 0){
+      console.log(players[sherifIndex] + " " + sherifIndex);
+    }
+    //}
+    console.log("-----------------------");
+
+
+
+
+    nextCrewmate(0);
+  }
+  
   function getImpostors()
   {
     //getRandomInt
@@ -62,7 +108,7 @@
     while(index < count){
 
 
-      impIndex[impIndex.length] = getRandomInt(min, max);
+      impIndex[impIndex.length] = getRandomInt(min, max-1);
 
 
       min = max + 1;
@@ -75,18 +121,27 @@
     }
     console.log("-----------------------");
 
-    
+    //console.log("------ Sherif ------");
+    //for (var i = 0; i < impIndex.length; i++) {
+      //console.log(players[sherifIndex] + " " + sherifIndex);
+    //}
+    //console.log("-----------------------");
 
 
 
-
-    nextCrewmate(0);
+    getSherif();
+    //nextCrewmate(0);
   }
 
   function nextCrewmate(index)
   {
 
     var playerName = players[index];
+
+    if(playerName == null)
+    {
+    playerName = "Bonne partie !";
+    }
 
     var code = "<p>"+playerName +"</p>";
     code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+");\">Continue</button>";
@@ -112,6 +167,11 @@
       {
         team = "Impostor";
       }
+    }
+
+    if(index == sherifIndex)
+    {
+      team = "Sherif";
     }
 
     if(team == "Impostor")
@@ -144,5 +204,5 @@
 }
 
 
-  console.log("Hello World 2000");
+  console.log("Sherif Update (3)");
 </script>
