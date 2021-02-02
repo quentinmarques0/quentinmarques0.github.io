@@ -54,7 +54,7 @@
   function getSherif()
   {
     //getRandomInt
-    var count = parseInt(document.getElementById("sherif").Value);
+    var count = parseInt(document.getElementById("sherif").value);
 
     var crewmateList = [];
     for(var i = 0; i < players.length; i++)
@@ -203,5 +203,5 @@
 }
 
 
-  console.log("Sherif Update 3");
+  console.log("Sherif Update");
 </script>
