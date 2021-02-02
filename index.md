@@ -17,7 +17,7 @@
 
 <select id="sherif" name="sherif">
   <option default value="0">0</option>
-  <option value="0">0</option>
+  <option value="1">1</option>
 </select>
 
 <input id="playerName" type="text" placeholder="Entrez votre nom !">
@@ -34,6 +34,7 @@
   {
     var name = document.getElementById("playerName").value;
     players[players.length] = name;
+    document.getElementById("playerName").value = "";
   }
 
   //Lancer le jeu
