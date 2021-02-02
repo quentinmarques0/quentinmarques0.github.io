@@ -60,9 +60,9 @@
     for(var i = 0; i < players.length; i++)
     {
       var isImpostor = false;
-      for(var j = 0; j < impostors.length; j++)
+      for(var j = 0; j < impIndex.length; j++)
       {
-        if(i == impostors[j])
+        if(i == impIndex[j])
         {
           isImpostor = true;
         }
@@ -203,5 +203,5 @@
 }
 
 
-  console.log("Sherif Update");
+  console.log("Sherif Update (2)");
 </script>
