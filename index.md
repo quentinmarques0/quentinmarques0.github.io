@@ -15,6 +15,11 @@
   <option value="9">9</option>
 </select>
 
+<select id="sherif" name="sherif">
+  <option default value="0">0</option>
+  <option value="0">0</option>
+</select>
+
 <input id="playerName" type="text" placeholder="Entrez votre nom !">
 <button class="btn btn-github" onclick="addPlayer();">Add Player</button>
 <button class="btn btn-github" onclick="launchGame();">Launch Game</button>
@@ -51,6 +56,7 @@
     var index = 0;
     var min = 0;
     var max = players.length / count;
+    var _max = max;
     while(index < count){
 
 
@@ -58,7 +64,7 @@
 
 
       min = max + 1;
-      max = (max * (index+1)) - 1;
+      max = min+(_max-1);//(max * (index+1)) - 1;
       index++;
     }
     console.log("----------------");
