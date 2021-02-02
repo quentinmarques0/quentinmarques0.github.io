@@ -47,52 +47,8 @@
     }
 
     var impostors = getImpostors();
-    var sherif = getSherif();
   }
 
-  function getSherif()
-  {
-    //getRandomInt
-    var count = document.getElementById("sherif").Value;
-
-    var crewmateList = [];
-    for(var i = 0; i < players.length; i++)
-    {
-      var isImpostor = false;
-      for(var j = 0; j < impostors.length; j++)
-      {
-        if(i == impostors[j])
-        {
-          isImpostor = true;
-        }
-      }
-      if(!isImpostor)
-      {
-        crewmateList[crewmateList.length] = i;
-      }
-    }
-
-    
-    
-    if(count > 0)
-    {
-      sherifIndex = crewmateList[getRandomInt(0, crewmateList.length-1)];
-    }
-    
-    console.log("------ Sherif ------");
-    //for (var i = 0; i < impIndex.length; i++) {
-    if(sherifIndex > 0){
-      console.log(players[sherifIndex] + " " + sherifIndex);
-    }
-    //}
-    console.log("-----------------------");
-
-
-
-
-    nextCrewmate(0);
-  }
-  
   function getImpostors()
   {
     //getRandomInt
@@ -106,7 +62,7 @@
     while(index < count){
 
 
-      impIndex[impIndex.length] = getRandomInt(min, max-1);
+      impIndex[impIndex.length] = getRandomInt(min, max);
 
 
       min = max + 1;
@@ -119,16 +75,12 @@
     }
     console.log("-----------------------");
 
-    console.log("------ Sherif ------");
-    //for (var i = 0; i < impIndex.length; i++) {
-      console.log(players[sherifIndex] + " " + sherifIndex);
-    //}
-    console.log("-----------------------");
+    
 
 
 
 
-    //nextCrewmate(0);
+    nextCrewmate(0);
   }
 
   function nextCrewmate(index)
@@ -192,5 +144,5 @@
 }
 
 
-  console.log("Hello World 2020");
+  console.log("Hello World 2000");
 </script>
