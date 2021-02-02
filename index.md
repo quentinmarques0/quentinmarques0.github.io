@@ -28,6 +28,7 @@
 
   players = [];
   impIndex = [];
+  sherifIndex = -1;
 
 
   function addPlayer()
@@ -46,8 +47,50 @@
     }
 
     var impostors = getImpostors();
+    var sherif = getSherif();
   }
 
+  function getSherif()
+  {
+    //getRandomInt
+    var count = document.getElementById("sherif").Value;
+
+    var crewmateList = [];
+    for(var i = 0; i < players.length; i++)
+    {
+      var isImpostor = false;
+      for(var j = 0; j < impostors.length; j++)
+      {
+        if(i == impostors[j])
+        {
+          isImpostor = true;
+        }
+      }
+      if(!isImpostor)
+      {
+        crewmateList[crewmateList.length] = i;
+      }
+    }
+
+    
+    
+    if(count > 0)
+    {
+      sherifIndex = crewmateList[getRandomInt(0, crewmateList-1)];
+    }
+    
+    console.log("------ Sherif ------");
+    //for (var i = 0; i < impIndex.length; i++) {
+      console.log(players[sherifIndex] + " " + sherifIndex);
+    //}
+    console.log("-----------------------");
+
+
+
+
+    nextCrewmate(0);
+  }
+  
   function getImpostors()
   {
     //getRandomInt
@@ -61,23 +104,29 @@
     while(index < count){
 
 
-      impIndex[impIndex.length] = getRandomInt(min, max);
+      impIndex[impIndex.length] = getRandomInt(min, max-1);
 
 
       min = max + 1;
       max = min+(_max-1);//(max * (index+1)) - 1;
       index++;
     }
-    console.log("----------------");
+    console.log("------ Impostor ------");
     for (var i = 0; i < impIndex.length; i++) {
       console.log(players[impIndex[i]] + " " + impIndex[i]);
     }
-    console.log("----------------");
+    console.log("-----------------------");
+
+    console.log("------ Sherif ------");
+    //for (var i = 0; i < impIndex.length; i++) {
+      console.log(players[sherifIndex] + " " + sherifIndex);
+    //}
+    console.log("-----------------------");
 
 
 
 
-    nextCrewmate(0);
+    //nextCrewmate(0);
   }
 
   function nextCrewmate(index)
