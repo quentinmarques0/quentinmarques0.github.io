@@ -62,6 +62,7 @@
       var isImpostor = false;
       for(var j = 0; j < impIndex.length; j++)
       {
+        console.log("Sherif Test "+ i + " == "+ impIndex[j]);
         if(i == impIndex[j])
         {
           isImpostor = true;
@@ -203,5 +204,5 @@
 }
 
 
-  console.log("Sherif Update (2)");
+  console.log("Sherif Update (3)");
 </script>
