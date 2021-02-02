@@ -27,6 +27,7 @@
 <script>
 
   players = [];
+  impostors = [];
   impIndex = [];
   sherifIndex = -1;
 
@@ -46,7 +47,7 @@
       console.log(players[i]);
     }
 
-    var impostors = getImpostors();
+    impostors = getImpostors();
     //var sherif = getSherif();
   }
 
@@ -192,5 +193,5 @@
 }
 
 
-  console.log("Hello World 2020");
+  console.log("Hello World 2000");
 </script>
