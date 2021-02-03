@@ -155,7 +155,12 @@ gameLaunched = true;
   function showButton(){
 
     var code = "<button class=\"btn btn-github\" onclick=\"addPlayer();\"><img style=\"width: 100%; height: 100%;\" src=\"au_btn.png\" ></button>";
-
+    code = "";
+    
+    for(var i=0; i < players.length; i++)
+    {
+      code += "<p>"+players[i]+"</p>";
+    }
 
     document.getElementsByTagName("body")[0].innerHTML = code;
   }
