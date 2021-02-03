@@ -145,7 +145,7 @@
   }
   function showButton(){
 
-    var code = "<button class="btn btn-github" onclick="addPlayer();"><img src=\"au_btn.png\" ></button>";
+    var code = "<button class=\"btn btn-github\" onclick=\"addPlayer();\"><img src=\"au_btn.png\" ></button>";
 
 
     document.getElementsByTagName("body")[0].innerHTML = code;
@@ -202,5 +202,6 @@
 }
 
 
-  console.log("Sherif Update (3)");
+  console.log("Sherif Update (4)");
 </script>
+
