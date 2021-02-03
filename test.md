@@ -30,7 +30,16 @@
   impostors = [];
   impIndex = [];
   sherifIndex = -1;
+  gameLaunched = false;
 
+
+document.addEventListener("keyup", function(event){
+  if(!gameLaunched){
+    if(event.key == 'Enter'){
+      addPlayer();
+    }
+  }
+});
 
   function addPlayer()
   {
@@ -42,7 +51,7 @@
   //Lancer le jeu
   function launchGame()
   {
-
+gameLaunched = true;
     for (var i = 0; i < players.length; i++) {
       console.log(players[i]);
     }
@@ -202,5 +211,5 @@
 }
 
 
-  console.log("Sherif Update (4)");
+  console.log("Sherif Update (3)");
 </script>
