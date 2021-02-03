@@ -74,13 +74,13 @@
       }
     }
 
-    
-    
+
+
     if(count > 0)
     {
       sherifIndex = crewmateList[getRandomInt(0, crewmateList.length-1)];
     }
-    
+
     console.log("------ Sherif ------");
     //for (var i = 0; i < impIndex.length; i++) {
     if(count > 0){
@@ -94,10 +94,9 @@
 
     nextCrewmate(0);
   }
-  
+
   function getImpostors()
   {
-    //getRandomInt
     var count = getImpCount();
 
 
@@ -115,42 +114,41 @@
       max = min+(_max-1);//(max * (index+1)) - 1;
       index++;
     }
-    console.log("------ Impostor ------");
+    console.log("------ Impostors ------");
     for (var i = 0; i < impIndex.length; i++) {
-      console.log(players[impIndex[i]] + " " + impIndex[i]);
+      console.log(players[impIndex[i]] + " - " + impIndex[i]);
     }
     console.log("-----------------------");
-
-    //console.log("------ Sherif ------");
-    //for (var i = 0; i < impIndex.length; i++) {
-      //console.log(players[sherifIndex] + " " + sherifIndex);
-    //}
-    //console.log("-----------------------");
-
-
-
     getSherif();
-    //nextCrewmate(0);
   }
 
   function nextCrewmate(index)
   {
 
     var playerName = players[index];
+    var isStartGame = (playerName == null);
 
-    if(playerName == null)
+    if(isStartGame)
     {
     playerName = "Bonne partie !";
     }
 
     var code = "<p>"+playerName +"</p>";
-    code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+");\">Continue</button>";
-
+    if(!isStartGame){
+      code += "<button class=\"btn btn-github\" onclick=\"showTeam("+ index+");\">Continue</button>";
+    } else {
+      code += "<button class=\"btn btn-github\" onclick=\"showButton();\">Launch Game !</button>";
+    }
 
 
     document.getElementsByTagName("body")[0].innerHTML = code;
+  }
+  function showButton(){
+
+    var code = "<button class="btn btn-github" onclick="addPlayer();"><img src=\"au_btn.png\" ></button>";
 
 
+    document.getElementsByTagName("body")[0].innerHTML = code;
   }
 
   function showTeam(index)
