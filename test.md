@@ -41,6 +41,17 @@ document.addEventListener("keyup", function(event){
   }
 });
 
+function RestartGame()
+{
+  players = [];
+  impostors = [];
+  impIndex = [];
+  sherifIndex = -1;
+  gameLaunched = false;
+  
+  launchGame();
+}
+
   function addPlayer()
   {
     var name = document.getElementById("playerName").value;
@@ -161,6 +172,8 @@ gameLaunched = true;
     {
       code += "<p>"+players[i]+"</p>";
     }
+    
+    code += "<button onclick=\"RestartGame();\">Restart</button>";
 
     document.getElementsByTagName("body")[0].innerHTML = code;
   }
@@ -216,5 +229,5 @@ gameLaunched = true;
 }
 
 
-  console.log("Sherif Update (3)");
+  console.log("Sherif Update (4)");
 </script>
