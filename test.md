@@ -43,7 +43,7 @@ document.addEventListener("keyup", function(event){
 
 function RestartGame()
 {
-  players = [];
+  //players = [];
   impostors = [];
   impIndex = [];
   sherifIndex = -1;
