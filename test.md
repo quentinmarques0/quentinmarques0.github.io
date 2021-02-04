@@ -31,6 +31,8 @@
   impIndex = [];
   sherifIndex = -1;
   gameLaunched = false;
+  
+  oldCode = "";
 
 
 document.addEventListener("keyup", function(event){
@@ -49,6 +51,8 @@ function RestartGame()
   sherifIndex = -1;
   gameLaunched = false;
   
+  document.getElementsByTagName("body")[0] = oldCode;
+  
   launchGame();
 }
 
@@ -62,11 +66,11 @@ function RestartGame()
   //Lancer le jeu
   function launchGame()
   {
-gameLaunched = true;
+    gameLaunched = true;
     for (var i = 0; i < players.length; i++) {
       console.log(players[i]);
     }
-
+    oldCode = document.getElementsByTagName("body")[0];
     impostors = getImpostors();
     //var sherif = getSherif();
   }
