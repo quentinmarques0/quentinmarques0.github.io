@@ -229,5 +229,5 @@ gameLaunched = true;
 }
 
 
-  console.log("Sherif Update (4)");
+  console.log("Sherif Update (5)");
 </script>
