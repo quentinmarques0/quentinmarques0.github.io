@@ -51,7 +51,7 @@ function RestartGame()
   sherifIndex = -1;
   gameLaunched = false;
   
-  document.getElementsByTagName("body")[0] = oldCode;
+  document.getElementsByTagName("body")[0].innerHTML = oldCode;
   
   launchGame();
 }
@@ -70,7 +70,7 @@ function RestartGame()
     for (var i = 0; i < players.length; i++) {
       console.log(players[i]);
     }
-    oldCode = document.getElementsByTagName("body")[0];
+    oldCode = document.getElementsByTagName("body")[0].innerHTML;
     impostors = getImpostors();
     //var sherif = getSherif();
   }
@@ -233,5 +233,5 @@ function RestartGame()
 }
 
 
-  console.log("Sherif Update (5)");
+  console.log("Sherif Update (6)");
 </script>
