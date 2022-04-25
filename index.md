@@ -1,10 +1,9 @@
 ## Welcome to Among Us Real Life
 
-
 > Click to the button to join the game
 > <a href="join.html">Join !</a>
 
-<select id="impostor" name="impostor">
+Imposteurs: <select id="impostor" name="impostor">
   <option default value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -16,7 +15,7 @@
   <option value="9">9</option>
 </select>
 
-<select id="sherif" name="sherif">
+Shérif: <select id="sherif" name="sherif">
   <option default value="0">0</option>
   <option value="1">1</option>
 </select>
